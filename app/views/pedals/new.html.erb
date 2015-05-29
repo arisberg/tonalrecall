@@ -1,7 +1,6 @@
 <div class="form-group">
-        <%= form_for @board do |f| %>
+        <%= form_for [@board, @pedal, @knob] do |pedal_form| %>
             Pedal:
-            <%= f.fields_for :pedals, Pedal.new do |pedal_form| %>
                 <%= pedal_form.label :name %>
                 <%= pedal_form.text_field :name %>
                 <%= pedal_form.label :brand %>
@@ -10,15 +9,12 @@
                 <%= pedal_form.text_field :effect %>
                 <br/>
             Knob:
-                <%= pedal_form.fields_for :knobs, Knob.new do |knob_form| %>
-                    <%= knob_form.label :name %>
-                    <%= knob_form.text_field :name %>
-                    <%= knob_form.label :value %>
-                    <%= knob_form.text_field :value %>
-                <% end %>
 
-            <% end %>
-            <%= f.submit "Add this Pedal", class: "btn btn-default" %>
+                    <%= pedal_form.label :name %>
+                    <%= pedal_form.text_field :name %>
+                    <%= pedal_form.label :value %>
+                    <%= pedal_form.text_field :value %>
+            <%= pedal_form.submit "Add this Pedal", class: "btn btn-default" %>
         <% end %>
 
 </div>

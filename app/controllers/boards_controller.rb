@@ -36,6 +36,6 @@ class BoardsController < ApplicationController
     private
 
     def board_params
-        params.require(:board).permit(:title, :audio, :instrument, pedals_attributes:[:id, :board_id, :name, :brand, :effect])
+        params.require(:board).permit(:title, :audio, :instrument, pedals_attributes:[:id, :board_id, :name, :brand, :effect, knobs_attributes:[:name, :value]])
     end
 end

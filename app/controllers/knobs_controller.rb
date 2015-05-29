@@ -5,8 +5,8 @@ class KnobsController < ApplicationController
 
     def create
 
-        knob = pedal.knob.build(knob_params)
-        if knob.save
+        @knob = pedal.knob.build(knob_params)
+        if @knob.save
             redirect_to '/userhome'
         else
             render "new"
