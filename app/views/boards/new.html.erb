@@ -1,0 +1,18 @@
+<div class="form-group">
+        <%= form_for @board do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+            <br/>
+            <%= f.label :audio %>
+            <%= f.text_field :audio, class: "form-control" %>
+            <br/>
+            <%= f.label :instrument %>
+            <%= f.text_field :instrument, class: "form-control" %>
+            <div class="text-center">
+            <%= f.submit "Create this Board", class: "btn btn-default" %>
+            </div>
+        <% end %>
+</div>
+
+
+

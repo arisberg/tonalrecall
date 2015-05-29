@@ -1,0 +1,15 @@
+<% @user.boards.each do |b| %>
+    <div>
+        <h1><%= b.title %></h1>
+        <h2><%= b.audio %></h2>
+        <h2><%= b.instrument %></h2>
+    </div>
+    <div>
+        <% b.pedals.each do |p| %>
+            <%= p.name %>
+            <%= p.brand %>
+            <%= p.effect %>
+            <% end %>
+    </div>
+    <%= link_to "Edit this Board", board_path(b) %>
+<% end %>

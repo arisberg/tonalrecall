@@ -1,0 +1,9 @@
+<h1><%= @board.title %></h1>
+<br/>
+<% @board.pedals.each do |pedal| %>
+    <%= pedal.name %>
+    <br/>
+
+<% end %>
+
+<%= link_to "Add a Pedal", new_board_pedal_path(@board) %>
