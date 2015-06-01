@@ -1,20 +1,23 @@
 <div class="form-group">
-        <%= form_for [@board, @pedal, @knob] do |pedal_form| %>
+        <%= form_for [@board, @pedal] do |p| %>
             Pedal:
-                <%= pedal_form.label :name %>
-                <%= pedal_form.text_field :name %>
-                <%= pedal_form.label :brand %>
-                <%= pedal_form.text_field :brand %>
-                <%= pedal_form.label :effect %>
-                <%= pedal_form.text_field :effect %>
+                <%= p.label :name %>
+                <%= p.text_field :name %>
+                <%= p.label :brand %>
+                <%= p.text_field :brand %>
+                <%= p.label :effect %>
+                <%= p.text_field :effect %>
                 <br/>
-            Knob:
+            <% 3.times do %>
+                <%= p.fields_for :knobs do |k| %>
+                    <%= k.label :name %>
+                    <%= k.text_field :name %>
+                    <%= k.label :value %>
+                    <%= k.text_field :value %>
+                <% end %>
+            <% end %>
 
-                    <%= pedal_form.label :name %>
-                    <%= pedal_form.text_field :name %>
-                    <%= pedal_form.label :value %>
-                    <%= pedal_form.text_field :value %>
-            <%= pedal_form.submit "Add this Pedal", class: "btn btn-default" %>
+            <%= p.submit "Add this Pedal", class: "btn btn-default" %>
         <% end %>
 
 </div>

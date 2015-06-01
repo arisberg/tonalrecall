@@ -3,4 +3,5 @@ class Pedal < ActiveRecord::Base
     has_many :knobs
 
     accepts_nested_attributes_for :knobs
+
 end

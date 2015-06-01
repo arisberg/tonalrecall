@@ -1,7 +1,7 @@
 <% @user.boards.each do |b| %>
     <div>
         <h1><%= b.title %></h1>
-        <h2><%= b.audio %></h2>
+        <h2><iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></h2>
         <h2><%= b.instrument %></h2>
     </div>
     <div>
@@ -9,7 +9,12 @@
             <%= p.name %>
             <%= p.brand %>
             <%= p.effect %>
+
+            <% p.knobs.each do |k| %>
+                <%= k.name %>
+                <%= k.value %>
             <% end %>
+        <% end %>
     </div>
     <%= link_to "Edit this Board", board_path(b) %>
 <% end %>
