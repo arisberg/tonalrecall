@@ -1,9 +1,9 @@
 User.create!([
-  {name: "Emilie", email: "emiliecorpuz@gmail.com", password_digest: "password"}
+  {name: "Emilie", email: "emiliecorpuz@gmail.com", password: "password"}
 ])
 
 Board.create!([
-  {title:"Pedal Board", instrument: "guitar", user_id: 1}
+  {title:"Pedal Board", audio: nil, instrument: "guitar", user_id: 1}
 ])
 
 Pedal.create!([
