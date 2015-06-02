@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+    before_action :require_user
 
     def index
         @user = current_user.id
@@ -19,6 +20,7 @@ class BoardsController < ApplicationController
             if @board.save
                 redirect_to "/userhome"
             else
+                flash[:error] = @board.errors.full_messages.to_sentence
                 render "new"
             end
     end

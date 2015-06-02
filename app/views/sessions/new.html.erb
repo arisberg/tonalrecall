@@ -3,6 +3,7 @@
 <br/>
 <h4>Log In:</h4>
 <p><%= flash[:error] %></p>
+<div class= "login">
 <div class="form-group">
     <%= form_tag('/login', method: :post) do %>
         <%= label_tag :name%>
@@ -13,5 +14,6 @@
         <br/>
         <%= submit_tag "Login", class: "btn btn-default" %>
     <% end %>
-
+</div>
+<%= link_to "Sign Up", "/signup", class: "btn btn-default" %>
 </div>

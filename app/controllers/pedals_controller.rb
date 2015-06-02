@@ -1,4 +1,6 @@
 class PedalsController < ApplicationController
+    before_action :require_user
+
     def new
         @board = Board.find(params[:board_id])
         @pedal = @board.pedals.new
