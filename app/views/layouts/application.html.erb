@@ -5,11 +5,42 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= google_webfonts_init({
+        google: ['Philosopher', 'Fugaz One']
+  }) %>
 </head>
 <body>
+<div class="banner">Tonal Recall</div>
+<!-- Nav bar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+              <% if current_user %>
+              <li><%= link_to "Create a Board", new_board_path, class: 'navbar-link'%></li>
+              <li><%= link_to "Other Boards", boards_path, class: 'navbar-link' %></li>
+              <% end %>
+            </ul>
+        </div>
+        <div class="pull-right">
+            <ul class="nav navbar-nav">
+              <% if current_user %>
+                <li><p class="navbar-text">Signed in as <strong> <%= current_user.name %></strong></p></li>
+                <li><%= link_to "Profile", '/userhome'%></li>
+                <li><%= link_to "Logout", '/logout'%></li>
+              <% else %>
+                <li><%= link_to "Login", '/login'%></li>
+                <li><%= link_to "Sign Up", '/signup'%></li>
+              <% end %>
+            </ul>
+        </div>
+      </div>
+    </nav>
 
+<div class="container">
 <%= yield %>
+</div>
 
-<%= params %>
+
 </body>
 </html>

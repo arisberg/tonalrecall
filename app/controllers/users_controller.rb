@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to '/'
+            redirect_to '/userhome'
         else
             flash[:error] = @user.errors.full_messages.to_sentence
             redirect_to('/signup')
@@ -16,7 +16,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = current_user
+        if current_user
+            @user = current_user
+        else
+            redirect_to "/login"
+        end
     end
 
     private

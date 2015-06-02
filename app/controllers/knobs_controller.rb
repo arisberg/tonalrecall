@@ -1,4 +1,6 @@
 class KnobsController < ApplicationController
+    before_action :require_user
+
     def new
         @knob = Knob.new
     end

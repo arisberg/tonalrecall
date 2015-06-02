@@ -1,7 +1,9 @@
 class BoardsController < ApplicationController
+    before_action :require_user
 
     def index
-        @boards = Board.all
+        @user = current_user.id
+        @boards = Board.where.not(user_id: @user)
     end
 
     def new
@@ -18,6 +20,7 @@ class BoardsController < ApplicationController
             if @board.save
                 redirect_to "/userhome"
             else
+                flash[:error] = @board.errors.full_messages.to_sentence
                 render "new"
             end
     end
@@ -31,6 +34,12 @@ class BoardsController < ApplicationController
         if @board.update_attributes(board_params)
             redirect_to "/userhome"
         end
+    end
+
+    def destroy
+        @board = Board.find(params[:id])
+        @board.destroy
+        redirect_to "/userhome"
     end
 
     private
