@@ -1,12 +1,7 @@
-<h1><%= @user.name %>'s Boards</h1>
-
-<% if @user.boards.length < 1 %>
-    <h2>You haven't created any pedal boards yet!</h2>
-<% end %>
-
-<% @user.boards.each do |b| %>
+<% @boards.each do |b| %>
     <div class=" container board">
         <h1><%= b.title %> - <%= b.instrument %></h1>
+        <h2>By: <%= b.user.name %></h2>
         <iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
         <br/>
         <p>Click "Edit" to add the pedals you used on this board</p>

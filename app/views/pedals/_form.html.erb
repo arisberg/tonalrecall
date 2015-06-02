@@ -1,0 +1,16 @@
+<%= form_for [@board, @pedal] do |f| %>
+
+   <%=  f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+    <%= f.label :effect %>
+    <%= f.text_field :effect %>
+  <h2>Knobs:</h2>
+  <% f.fields_for :knobs do |knob| %>
+    <%= render "knob_fields", :f => knob %>
+  <% end %>
+  <br/>
+  <p><%= link_to_add_association "Add Knob", f, :knobs, class: "btn btn-default" %></p>
+  <p><%= f.submit "Submit", class: "btn btn-default" %></p>
+<% end %>

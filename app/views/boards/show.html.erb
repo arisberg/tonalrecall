@@ -1,9 +1,12 @@
 <h1><%= @board.title %></h1>
 <br/>
-<% @board.pedals.each do |pedal| %>
-    <%= pedal.name %>
-    <br/>
 
+<% @board.pedals.each do |pedal| %>
+<div class="pedal">
+    <h3><%= pedal.name %></h3>
+    <br/>
+</div>
 <% end %>
 
-<%= link_to "Add a Pedal", new_board_pedal_path(@board) %>
+<%= link_to "Add a Pedal", new_board_pedal_path(@board), class: 'btn btn-default' %>
+<%= link_to "Delete this Board", @board, method: :delete, class: 'btn btn-default' %>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to '/'
+            redirect_to '/userhome'
         else
             flash[:error] = @user.errors.full_messages.to_sentence
             redirect_to('/signup')

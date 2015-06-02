@@ -1,7 +1,8 @@
 class BoardsController < ApplicationController
 
     def index
-        @boards = Board.all
+        @user = current_user.id
+        @boards = Board.where.not(user_id: @user)
     end
 
     def new
@@ -31,6 +32,12 @@ class BoardsController < ApplicationController
         if @board.update_attributes(board_params)
             redirect_to "/userhome"
         end
+    end
+
+    def destroy
+        @board = Board.find(params[:id])
+        @board.destroy
+        redirect_to "/userhome"
     end
 
     private

@@ -1,11 +1,14 @@
 <div class="form-group">
         <%= form_for @board do |f| %>
+            <p>Give your new board a name:</p>
             <%= f.label :title %>
             <%= f.text_field :title, class: "form-control" %>
             <br/>
+            <p>If you have a SoundCloud sample of this board, put the URL here:</p>
             <%= f.label :audio %>
             <%= f.text_field :audio, class: "form-control" %>
             <br/>
+            <p>What are you playing through this board? Guitar? Bass? Keyboard?</p>
             <%= f.label :instrument %>
             <%= f.text_field :instrument, class: "form-control" %>
             <div class="text-center">
