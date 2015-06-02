@@ -7,16 +7,20 @@
 <% @user.boards.each do |b| %>
     <div class=" container board">
         <h1><%= b.title %> - <%= b.instrument %></h1>
-        <iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        <%= link_to "Edit", board_path(b), class: "btn btn-default tag-tooltip",
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Add Pedals",
+                    'data-placement' => 'right'%>
+
+        <div class="soundcloud"><iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></div>
         <br/>
-        <p>Click "Edit" to add the pedals you used on this board</p>
-        <%= link_to "Edit", board_path(b), class: "btn btn-default" %>
+        <h3>Pedals:</h3>
 
 
     <div class="row">
         <% b.pedals.each do |p| %>
         <div class="col-sm-2 pedal">
-        <h4>
+        <h4 class="pedal_details">
         <%= p.name %>
         <br/>
         <%= p.brand %>
@@ -24,12 +28,16 @@
         <%= p.effect %>
         </h4>
         <br/>
+        <ul class="list-group">
         <% p.knobs.each do |k| %>
+        <li class="list-group-item">
+        <%= image_tag('knob.png', class: 'knob')%>
         <%= k.name %>
         :
         <%= k.value %>
-        <br/>
+        </li>
         <% end %>
+        </ul>
          </div>
          <% end %>
     </div>

@@ -17,4 +17,7 @@
 //= require bootstrap-sprockets
 //= require cocoon
 
+$(document).on("ready page:change", function() {
+    $('.tag-tooltip').tooltip();
+});
 

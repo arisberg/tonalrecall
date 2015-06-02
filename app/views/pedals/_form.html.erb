@@ -11,6 +11,9 @@
     <%= render "knob_fields", :f => knob %>
   <% end %>
   <br/>
-  <p><%= link_to_add_association "Add Knob", f, :knobs, class: "btn btn-default" %></p>
+  <p><%= link_to_add_association "Add Knob", f, :knobs, class: "btn btn-default tag-tooltip",
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Please use o'clock notation for dials - on/off for toggles",
+                    'data-placement' => 'right'%></p>
   <p><%= f.submit "Submit", class: "btn btn-default" %></p>
 <% end %>
