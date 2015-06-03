@@ -16,12 +16,16 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
+.custombar {
+    font-fize: 6em;
+}
+
 .login{
     margin-bottom: 50px;
 }
 
 .banner {
-    font-family: 'Fugaz One';
+    font-family: 'Sarina';
     font-size: 8em;
     text-align: center;
     border: solid black 2px;
@@ -36,7 +40,7 @@
     border-radius: 10px;
     background: #FFF3DA;
     padding: 10px;
-    height: 600px;
+    width: 200px;
 }
 
 .board {
@@ -45,7 +49,7 @@
     background: #FFE0A3;
     margin-bottom: 20px;
     padding: 30px;
-    background-image: url('wood-texture.jpg')
+    background: url('wood-texture.jpg');
 
 }
 

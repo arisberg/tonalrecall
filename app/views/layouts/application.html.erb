@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= google_webfonts_init({
-        google: ['Philosopher', 'Fugaz One']
+        google: ['Philosopher', 'Fugaz One', 'Megrim', 'Sarina']
   }) %>
 </head>
 <body>
@@ -27,19 +27,19 @@
               <li><%= link_to "Other Boards", boards_path, class: 'navbar-link' %></li>
               <% end %>
             </ul>
-        
-        
+
+
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
                 <li><p class="navbar-text">Signed in as <strong> <%= current_user.name %></strong></p></li>
-                
+
                 <li><%= link_to "Logout", '/logout'%></li>
               <% else %>
                 <li><%= link_to "Login", '/login'%></li>
                 <li><%= link_to "Sign Up", '/signup'%></li>
               <% end %>
             </ul>
-    
+
         </div>
       </div>
     </nav>
