@@ -1,11 +1,11 @@
-<h1><%= @user.name %>'s Boards</h1>
+<h1 class="text-center"><%= @user.name %>'s Boards</h1>
 
 <% if @user.boards.length < 1 %>
     <h2>You haven't created any pedal boards yet!</h2>
 <% end %>
 
 <% @user.boards.each do |b| %>
-    <div class=" container board">
+    <div class=" container board text-center">
         <h1><%= b.title %> - <%= b.instrument %></h1>
         <%= link_to "Edit", board_path(b), class: "btn btn-default tag-tooltip",
                     :data => {:toggle=>"tooltip"},
@@ -18,9 +18,9 @@
         <h3>Pedals:</h3>
 
 
-    <div class="row">
+    <div class="grid">
         <% b.pedals.each do |p| %>
-        <div class="col-sm-2 pedal">
+        <div class="grid-item pedal">
         <h4 class="pedal_details">
         <%= p.name %>
         <br/>

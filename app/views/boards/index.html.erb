@@ -10,9 +10,9 @@
         <%= link_to "Edit", board_path(b), class: "btn btn-default" %>
 
 
-    <div class="row">
+    <div class="grid">
         <% b.pedals.each do |p| %>
-        <div class="col-sm-2 pedal">
+        <div class="grid-item pedal">
         <h4>
         <%= p.name %>
         <br/>
@@ -21,12 +21,16 @@
         <%= p.effect %>
         </h4>
         <br/>
+        <ul class="list-group">
         <% p.knobs.each do |k| %>
+        <li class="list-group-item">
+        <%= image_tag('knob.png', class: 'knob')%>
         <%= k.name %>
         :
         <%= k.value %>
-        <br/>
+        </li>
         <% end %>
+        </ul>
          </div>
          <% end %>
     </div>
