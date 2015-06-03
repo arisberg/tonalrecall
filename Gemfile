@@ -34,6 +34,8 @@ gem 'google-webfonts-rails'
 
 gem 'factory_girl_rails'
 
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
