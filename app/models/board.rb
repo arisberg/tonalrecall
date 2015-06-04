@@ -6,13 +6,14 @@ class Board < ActiveRecord::Base
     validates :instrument, presence: true
 
 
+
     def setup_id(current_user)
         self.user_id = current_user.id
     end
 
     def getSoundCloud(url)
-        track = $client.get('/resolve', :url => url)
-        track_id = track.id
+            track = $client.get('/resolve', :url => url)
+            track_id = track.id
     end
 
 end

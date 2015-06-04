@@ -25,6 +25,7 @@ $(document).on("ready page:change", function() {
 
 $(document).ready(function () {
             $('.grid').masonry({
+                isFitWidth: true,
                 itemSelector:'.grid-item',
                 columnWidth: 200
                 });
