@@ -3,7 +3,12 @@ class BoardsController < ApplicationController
 
     def index
         @user = current_user.id
-        @boards = Board.where.not(user_id: @user)
+        if params[:search] && params[:search] != ""
+            user = User.where(name: params[:search])
+            @boards = user.first.boards
+        else
+            @boards = Board.where.not(user_id: @user)
+        end
     end
 
     def new
