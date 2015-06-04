@@ -1,0 +1,21 @@
+<div class="form-group board">
+<%= form_for [@board, @pedal] do |f| %>
+    <h1>Pedal:</h1>
+   <%=  f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+    <%= f.label :effect %>
+    <%= f.text_field :effect %>
+    <br/>
+    <h1>Knobs:</h1>
+    <%= f.fields_for :knobs do |k| %>
+        <%= k.label :name %>
+        <%= k.text_field :name %>
+        <%= k.label :value %>
+        <%= k.text_field :value %>
+        <br/>
+    <% end %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+<% end %>
+</div>

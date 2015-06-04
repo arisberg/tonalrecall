@@ -1,37 +1,35 @@
 <% @boards.each do |b| %>
-    <div class=" container board">
+    <div class=" container board text-center">
         <h1><%= b.title %> - <%= b.instrument %></h1>
         <h2>By: <%= b.user.name %></h2>
         <% unless b.audio == nil %>
         <iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
         <% end %>
         <br/>
-        <p>Click "Edit" to add the pedals you used on this board</p>
-        <%= link_to "Edit", board_path(b), class: "btn btn-default" %>
 
 
     <div class="grid">
         <% b.pedals.each do |p| %>
-        <div class="grid-item pedal">
-        <h4>
-        <%= p.name %>
-        <br/>
-        <%= p.brand %>
-        <br/>
-        <%= p.effect %>
-        </h4>
-        <br/>
-        <ul class="list-group">
-        <% p.knobs.each do |k| %>
-        <li class="list-group-item">
-        <%= image_tag('knob.png', class: 'knob')%>
-        <%= k.name %>
-        :
-        <%= k.value %>
-        </li>
-        <% end %>
-        </ul>
-         </div>
+            <div class="grid-item pedal">
+                <h4 class="pedal_details">
+                    <%= p.name %>
+                    <br/>
+                    <%= p.brand %>
+                    <br/>
+                    <%= p.effect %>
+                </h4>
+                <br/>
+                <ul class="list-group">
+                    <% p.knobs.each do |k| %>
+                    <li class="list-group-item text-left">
+                    <%= image_tag('knob.png', class: 'knob')%>
+                    <%= k.name %>
+                    :
+                    <%= k.value %>
+                    </li>
+                    <% end %>
+                </ul>
+             </div>
          <% end %>
     </div>
 

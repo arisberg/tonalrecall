@@ -16,8 +16,40 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
-.custombar {
-    font-fize: 6em;
+.space {
+    margin-bottom: 100px;
+}
+
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 20px;
+    border: solid black 2px;
+    border-radius: 500px;
+}
+
+.customnav {
+    background: url('mesh.jpg');
+    background-size: 100px 100px;
+    border: solid black 5px;
+}
+
+.customnav .navbar-nav li a {
+    color: white;
+    font-size: 1em;
+}
+
+.customnav .navbar-nav li a:hover {
+    color: #FFF3DA;
+}
+
+.customnav .navbar-text {
+    color: white;
+    font-size: 1em;
 }
 
 .login{
@@ -28,7 +60,7 @@
     font-family: 'Sarina';
     font-size: 8em;
     text-align: center;
-    border: solid black 2px;
+    border: solid black 10px;
     border-radius: 10px;
     text-shadow: 2px 2px #A33519;
 
@@ -54,7 +86,7 @@
 }
 
 body {
-    background: #FFF3DA;
+    background: url('pickguard.jpg');
     font-family: 'Philosopher';
 }
 
