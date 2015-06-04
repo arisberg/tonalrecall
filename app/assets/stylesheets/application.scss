@@ -33,7 +33,7 @@
 }
 
 .customnav {
-    background: url('mesh.jpg');
+    background: image-url('mesh.jpg');
     background-size: 100px 100px;
     border: solid black 5px;
 }
@@ -90,12 +90,12 @@
     background: #FFE0A3;
     margin-bottom: 20px;
     padding: 30px;
-    background: url('wood-texture.jpg');
+    background: image-url('wood-texture.jpg');
     box-shadow: 3px 7px 5px black
 }
 
 body {
-    background: url('pickguard.jpg');
+    background: image-url('pickguard.jpg');
     font-family: 'Philosopher';
 }
 

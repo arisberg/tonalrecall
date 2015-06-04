@@ -41,8 +41,6 @@ gem 'figaro'
 
 gem 'masonry-rails'
 
-gem 'rails_serve_static_assets'
-gem 'rails_stdout_logging'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
