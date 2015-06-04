@@ -7,8 +7,8 @@
     <div class="container board">
     <div class="grid space">
     <% @board.pedals.each do |pedal| %>
-    <%= link_to edit_board_pedal_path(@board, pedal) do %>
     <div class="grid-item pedal">
+    <%= link_to edit_board_pedal_path(@board, pedal) do %>
         <h4 class="pedal_details">
             <%= pedal.name %>
             <br/>
