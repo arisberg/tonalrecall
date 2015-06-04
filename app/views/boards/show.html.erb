@@ -1,9 +1,13 @@
 <h1><%= @board.title %></h1>
 <br/>
-
-<div class="row">
+<div class="text-center">
+<%= link_to "Add a Pedal", new_board_pedal_path(@board), class: 'btn btn-default' %>
+<%= link_to "Delete this Board", @board, method: :delete, class: 'btn btn-default' %>
+</div>
+<div class="grid space">
 <% @board.pedals.each do |pedal| %>
-<div class="col-sm-3 pedal">
+<%= link_to edit_board_pedal_path(@board, pedal) do %>
+<div class="grid-item pedal">
     <h4 class="pedal_details">
         <%= pedal.name %>
         <br/>
@@ -23,7 +27,5 @@
         </ul>
 </div>
 <% end %>
+<% end %>
 </div>
-
-<%= link_to "Add a Pedal", new_board_pedal_path(@board), class: 'btn btn-default' %>
-<%= link_to "Delete this Board", @board, method: :delete, class: 'btn btn-default' %>

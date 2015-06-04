@@ -15,7 +15,6 @@
         <div class="soundcloud"><iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></div>
         <% end %>
         <br/>
-        <h3>Pedals:</h3>
 
 
     <div class="grid">
@@ -31,7 +30,7 @@
         <br/>
         <ul class="list-group">
         <% p.knobs.each do |k| %>
-        <li class="list-group-item">
+        <li class="list-group-item text-left">
         <%= image_tag('knob.png', class: 'knob')%>
         <%= k.name %>
         :
