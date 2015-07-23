@@ -1,7 +1,7 @@
 <h1 class="text-center"><%= @user.name %>'s Boards</h1>
 
 <% if @user.boards.length < 1 %>
-    <h2>You haven't created any pedal boards yet!</h2>
+    <h2 class="text-center">You haven't created any pedal boards yet!</h2>
 <% end %>
 
 <% @user.boards.each do |b| %>
