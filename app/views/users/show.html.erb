@@ -2,6 +2,7 @@
 
 <% if @user.boards.length < 1 %>
     <h2 class="text-center">You haven't created any pedal boards yet!</h2>
+    <h2 class="text-center">Get started by clicking 'Create a Board' in the nav above.</h2>
 <% end %>
 
 <% @user.boards.each do |b| %>

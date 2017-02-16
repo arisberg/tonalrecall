@@ -20,20 +20,19 @@
     margin-bottom: 100px;
 }
 
-
 .btn {
-    padding: 14px 24px;
     border: 0 none;
     font-weight: 1000;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin: 20px;
+    margin: 5px 0;
     border: solid black 2px;
 }
 
 .customnav {
     background: white;
     margin-bottom: 100px;
+    padding: 0;
 }
 
 .customnav .navbar-nav li a {
@@ -45,29 +44,36 @@
     color: #purple;
 }
 
-.customnav .navbar-text {
-    color: black;
-    font-size: 17px;
+.welcome {
+    padding: 20px 50px;
+    border: 2px solid black;
 }
 
-.login{
-    margin-bottom: 50px;
+.welcome-message {
+    font-size: 20px;
 }
 
-.banner {
-    font-family: 'Rhodium Libre';
-    font-size: 8em;
-    text-align: center;
-    background: #3498db;
+.main-title {
+    font-size: 50px;
+}
 
+.login-form{
+    border: 2px solid black;
+    padding: 50px;
+}
 
+.get-ready-to-rock {
+    padding-left: 25%;
+}
+
+.get-ready-to-rock h1 {
+    font-size: 60px;
 }
 
 .pedal {
     border: solid black 1px;
     padding: 10px;
     width: 200px;
-
 }
 
 .pedal:nth-child(3n+3){
@@ -80,14 +86,13 @@
     background-color: #733700;
 }
 .board {
-    background: #3498db;
+    background: #95a5a6;
     margin-bottom: 20px;
     padding: 30px;
 }
 
 body {
     background: #95a5a6;
-    font-family: 'Work Sans';
 }
 
 .knob {

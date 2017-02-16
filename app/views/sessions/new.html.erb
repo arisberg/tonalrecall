@@ -1,9 +1,11 @@
 
-<div class= "login">
-    <div class="form-group board">
-        <h1>Welcome to Tonal Recall</h1>
-        <h2>Create, share and revisit your favorite pedal setups</h2>
-        <br/>
+<div class= "login container">
+    <div class="welcome row col-sm-7">
+        <h1 class="main-title">Tonal Recall</h1>
+        <p class="welcome-message">If you're like me, you have dozens of pedals on your pedal board.  Keeping track of which pedals, at which settings, make which sound can be a pain.  That's why I created Tonal Recall.  Here you can create virtual representations of your pedal board and keep track of what settings and combinations of pedal you used to create each tone and effect you use.  It's free, it's easy to use, and it's better than using a pencil and paper.  Sign up and give it a try!</p>
+    </div>
+    <div class="row col-sm-2"></div>
+    <div class="form-group login-form row col-sm-3">
         <h4>Log In:</h4>
         <p><%= flash[:error] %></p>
         <%= form_tag('/login', method: :post) do %>
