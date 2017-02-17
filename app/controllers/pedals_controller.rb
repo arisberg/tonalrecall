@@ -17,6 +17,19 @@ class PedalsController < ApplicationController
         end
     end
 
+    def edit
+        @board = Board.find(params[:board_id])
+        @pedal = @board.pedals.find(params[:id])
+    end
+
+    def update
+        @board = Board.find(params[:board_id])
+        @pedal = Pedal.find(params[:id])
+        if @pedal.update_attributes(pedal_params)
+            redirect_to "/userhome"
+        end
+    end
+
     private
 
     def pedal_params

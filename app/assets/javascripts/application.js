@@ -13,11 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //= require cocoon
+//= require masonry/jquery.masonry
 
 $(document).on("ready page:change", function() {
     $('.tag-tooltip').tooltip();
 });
 
+$(document).ready(function () {
+            $('.grid').masonry({
+                isFitWidth: true,
+                itemSelector:'.grid-item',
+                columnWidth: 200
+                });
+            });

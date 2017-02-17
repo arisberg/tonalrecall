@@ -1,7 +1,7 @@
 <h1>Sign up for an account</h1>
 
 <p><%= flash[:error] %></p>
-<div class="form-group">
+<div class="form-group board row col-sm-6">
     <%= form_for (@user) do |f| %>
 
         <%= f.label :name %>
@@ -18,6 +18,12 @@
         <br/>
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
-        <%= f.submit "Submit", class: "btn btn-default" %></li>
+        <%= f.submit "Submit", class: "btn submit-btn btn-default" %></li>
     <% end %>
+</div>
+<div class="get-ready-to-rock row col-sm-6">
+    <h1 class="grtr-line">GET</h1>
+    <h1 class="grtr-line">READY</h1>
+    <h1 class="grtr-line">TO</h1>
+    <h1 class="grtr-line">ROCK</h1>
 </div>

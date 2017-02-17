@@ -6,33 +6,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= google_webfonts_init({
-        google: ['Philosopher', 'Fugaz One']
+        google: ['Rhodium Libre', 'Work Sans']
   }) %>
 </head>
 <body>
-<div class="banner">Tonal Recall</div>
 <!-- Nav bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default well customnav" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-            <ul class="nav navbar-nav">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav navbar-left">
               <% if current_user %>
+              <li><%= link_to "My Pedal Boards", '/userhome'%></li>
               <li><%= link_to "Create a Board", new_board_path, class: 'navbar-link'%></li>
               <li><%= link_to "Other Boards", boards_path, class: 'navbar-link' %></li>
               <% end %>
             </ul>
-        </div>
-        <div class="pull-right">
-            <ul class="nav navbar-nav">
+
+
+            <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
-                <li><p class="navbar-text">Signed in as <strong> <%= current_user.name %></strong></p></li>
-                <li><%= link_to "Profile", '/userhome'%></li>
+                <li><p class="navbar-text">Hello,<strong> <%= current_user.name %></strong></p></li>
+
                 <li><%= link_to "Logout", '/logout'%></li>
               <% else %>
                 <li><%= link_to "Login", '/login'%></li>
                 <li><%= link_to "Sign Up", '/signup'%></li>
               <% end %>
             </ul>
+
         </div>
       </div>
     </nav>

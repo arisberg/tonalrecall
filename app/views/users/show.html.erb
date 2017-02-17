@@ -1,25 +1,26 @@
-<h1><%= @user.name %>'s Boards</h1>
+<h1 class="text-center"><%= @user.name %>'s Boards</h1>
 
 <% if @user.boards.length < 1 %>
-    <h2>You haven't created any pedal boards yet!</h2>
+    <h2 class="text-center">You haven't created any pedal boards yet!</h2>
+    <h2 class="text-center">Get started by clicking 'Create a Board' in the nav above.</h2>
 <% end %>
 
 <% @user.boards.each do |b| %>
-    <div class=" container board">
+    <div class=" container board text-center">
         <h1><%= b.title %> - <%= b.instrument %></h1>
         <%= link_to "Edit", board_path(b), class: "btn btn-default tag-tooltip",
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Add Pedals",
                     'data-placement' => 'right'%>
-
+        <% unless b.audio == nil || b.audio == "" %>
         <div class="soundcloud"><iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= b.getSoundCloud(b.audio) %>&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></div>
+        <% end %>
         <br/>
-        <h3>Pedals:</h3>
 
 
-    <div class="row">
+    <div class="grid">
         <% b.pedals.each do |p| %>
-        <div class="col-sm-2 pedal">
+        <div class="grid-item pedal">
         <h4 class="pedal_details">
         <%= p.name %>
         <br/>
@@ -30,7 +31,7 @@
         <br/>
         <ul class="list-group">
         <% p.knobs.each do |k| %>
-        <li class="list-group-item">
+        <li class="list-group-item text-left">
         <%= image_tag('knob.png', class: 'knob')%>
         <%= k.name %>
         :
@@ -45,3 +46,4 @@
 
     </div>
 <% end %>
+
