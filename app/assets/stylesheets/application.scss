@@ -29,10 +29,14 @@
     border: solid black 2px;
 }
 
+.submit-btn {
+    margin-top: 50px;
+}
+
 .customnav {
     background: white;
-    margin-bottom: 100px;
     padding: 0;
+    border-bottom: 3px solid orange;
 }
 
 .customnav .navbar-nav li a {
@@ -86,13 +90,14 @@
     background-color: #733700;
 }
 .board {
-    background: #95a5a6;
-    margin-bottom: 20px;
+    background: #dadada;
+    margin: 20px;
     padding: 30px;
+    border: 2px solid orange;
 }
 
 body {
-    background: #95a5a6;
+    background: #aeaeae;
 }
 
 .knob {

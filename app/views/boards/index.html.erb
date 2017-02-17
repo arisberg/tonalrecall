@@ -7,7 +7,7 @@
 <% end %>
 
 <% @boards.each do |b| %>
-    <div class=" container board text-center">
+    <div class="board text-center">
         <h1><%= b.title %> - <%= b.instrument %></h1>
         <h2>By: <%= b.user.name %></h2>
         <% unless b.audio == nil || b.audio == "" %>
